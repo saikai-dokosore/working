@@ -1,11 +1,8 @@
 const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
 
-const config = {
+module.exports = withPWA({
   pwa: {
-    dest: "public",
-    runtimeCaching,
+    dest: "public", // swの出力ディレクトリ
+    // runtimeCaching: []
   },
-};
-
-module.exports = withPWA(config);
+});

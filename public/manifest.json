@@ -1,11 +1,13 @@
 {
-  "theme_color": "#f9a8d4",
-  "background_color": "#fde68a",
+  "background_color": "#0175C2",
+  "theme_color": "#0175C2",
   "display": "standalone",
   "scope": "/",
   "name": "Working",
   "short_name": "Working",
   "description": "さいかい専用アプリ",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icon-192x192.png",
