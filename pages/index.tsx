@@ -3,10 +3,26 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.scss';
 import testStyles from '../styles/Test.module.scss';
+import SimpleMDE from 'react-simplemde-editor';
+import { useState, useEffect } from 'react';
 
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
 const Home: NextPage = () => {
+  const [memo, setMemo] = useState('# memo');
+
+  useEffect(() => {
+    const localMemo: string | null = localStorage.getItem('memo');
+    if (localMemo) {
+      setMemo(localMemo);
+    }
+  }, []);
+
+  const saveMemo = (m: string): void => {
+    setMemo(m);
+    localStorage.setItem('memo', memo);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,6 +35,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>最高のTypeScript環境</h1>
+        <SimpleMDE value={memo} onChange={(e) => saveMemo(e)} />
       </main>
     </div>
   );
