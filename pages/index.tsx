@@ -19,8 +19,12 @@ const Home: NextPage = () => {
         <link rel='apple-touch-icon' href='/icon-192x192.png' />
       </Head>
 
+      <header className={styles.header}>
+        <h1>WORKING</h1>
+        <h1 className={styles.green}>APP</h1>
+      </header>
+
       <main className={styles.main}>
-        <h1 className={styles.title}>最高のTypeScript環境</h1>
         <Link href='/talk'>
           <a>TALK</a>
         </Link>
